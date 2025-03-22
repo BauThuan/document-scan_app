@@ -1,47 +1,25 @@
-import { useState, useEffect } from 'react'
-import { getTest, uploadImage } from './services/services'
-import { Upload, Button, message } from "antd";
-import { UploadOutlined } from "@ant-design/icons"
-import './App.css'
+import { Container } from './styles';
+import { Content } from './components/Content';
+import { Header } from './components/header';
+import { Spin } from 'antd';
+import { useLoading, useShowUpload } from './store';
+import { useMemo } from 'react';
 
 function App() {
-  const [message, setMessage] = useState("");
+  const { loading } = useLoading()
+  const { isShow } = useShowUpload()
 
-  const fetchApi = async () => {
-    try {
-      const res = await getTest()
-      setMessage(res.message)
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
-  const handleUpload = async (info) => {
-    try {
-      const formData = new FormData();
-      formData.append("image_name", info.file);
-      const response = await uploadImage(formData)
-      message.success(`Upload thành công: ${response.data.image_path}`);
-    } catch (error) {
-      message.error("Upload thất bại!");
-    }
-  };
-
-  useEffect(() => {
-    fetchApi()
-  }, []);
-
-  console.log(message)
-
+  const currentComponent = useMemo(() => {
+    return isShow ? <h1>Result</h1> : <Content />
+  }, [isShow])
+  
   return (
-    <>
-      <h1>{message}</h1>
-      <Upload customRequest={handleUpload} showUploadList={false}>
-        <Button icon={<UploadOutlined />}>
-          Upload Ảnh
-        </Button>
-      </Upload>
-    </>
+    <Container>
+      <Spin spinning={loading}>
+        <Header />
+        {currentComponent}
+      </Spin>
+    </Container>
   )
 }
 
