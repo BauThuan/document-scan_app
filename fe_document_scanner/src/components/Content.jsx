@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { InboxOutlined, UploadOutlined } from "@ant-design/icons";
+import { InboxOutlined } from "@ant-design/icons";
 import { message, Upload, Button } from "antd";
 import { uploadImage } from "../services/services";
 import { useLoading, useShowUpload } from "../store";
 import { ImageContainer } from "../styles";
+import { translations } from "../constant";
 
 const { Dragger } = Upload;
 
@@ -26,16 +27,6 @@ export const Content = () => {
             setFile(null)
         }
     }
-
-    const translations = {
-        ADDRESS: "Địa chỉ",
-        DES: "Chức vụ",
-        EMAIL: "Email",
-        NAME: "Họ tên",
-        ORG: "Cơ quan",
-        PHONE: "Số điện thoại",
-        WEB: "Website"
-    };
 
     const handleUpload = async () => {
         try {
@@ -61,7 +52,7 @@ export const Content = () => {
                 ? <div>
                     <div style={{ width: "80%", margin: '0 auto', display: 'flex', alignItems: "center", justifyContent: "space-between" }}>
                         <ImageContainer style={{ backgroundImage: `url("data:image/jpeg;base64,${data?.originalImage}")` }} />
-                        <span style={{ fontSize: "24px"}}>➡️</span>
+                        <span style={{ fontSize: "24px" }}>➡️</span>
                         <ImageContainer style={{ backgroundImage: `url("data:image/jpeg;base64,${data?.boxedImage}")` }} />
                     </div>
                     <div style={{ display: "flex", gap: "20px", flexWrap: "wrap", alignItems: 'center', justifyContent: "center", marginTop: 20 }}>
