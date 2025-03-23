@@ -61,6 +61,7 @@ export const Content = () => {
                 ? <div>
                     <div style={{ width: "80%", margin: '0 auto', display: 'flex', alignItems: "center", justifyContent: "space-between" }}>
                         <ImageContainer style={{ backgroundImage: `url("data:image/jpeg;base64,${data?.originalImage}")` }} />
+                        <span style={{ fontSize: "24px"}}>➡️</span>
                         <ImageContainer style={{ backgroundImage: `url("data:image/jpeg;base64,${data?.boxedImage}")` }} />
                     </div>
                     <div style={{ display: "flex", gap: "20px", flexWrap: "wrap", alignItems: 'center', justifyContent: "center", marginTop: 20 }}>
@@ -84,7 +85,7 @@ export const Content = () => {
                                                 {translations[key] || key}
                                             </td>
                                             <td style={{ textAlign: "left", padding: "10px" }}>
-                                                {Array.isArray(value) && value.length ? value.join(", ") : "Trống"}
+                                                {Array.isArray(value) && value.length ? value.join(", ") : ""}
                                             </td>
                                         </tr>
                                     );
@@ -93,7 +94,7 @@ export const Content = () => {
                         </table>
                     </div>
                 </div>
-                : <div style={{ width: 400, margin: "0 auto" }}>
+                : <div style={{ width: 500, margin: "0 auto" }}>
                     <Dragger {...props}>
                         <p className="ant-upload-drag-icon">
                             <InboxOutlined />
