@@ -63,15 +63,32 @@ export const Content = () => {
                         <ImageContainer style={{ backgroundImage: `url("data:image/jpeg;base64,${data?.originalImage}")` }} />
                         <ImageContainer style={{ backgroundImage: `url("data:image/jpeg;base64,${data?.boxedImage}")` }} />
                     </div>
-                    <div style={{ display: "flex", gap: "20px", flexWrap: "wrap", alignItems: 'center', justifyContent: "center" }}>
-                        <table border="1" cellPadding="10" style={{ borderCollapse: "collapse", width: "50%" }}>
+                    <div style={{ display: "flex", gap: "20px", flexWrap: "wrap", alignItems: 'center', justifyContent: "center", marginTop: 20 }}>
+                        <table
+                            border="1"
+                            cellPadding="10"
+                            style={{
+                                borderCollapse: "collapse",
+                                width: "50%",
+                                backgroundColor: "#1e1e1e",
+                                color: "white",
+                                border: "1px solid #444"
+                            }}
+                        >
                             <tbody>
-                                {Object?.entries(data?.result).map(([key, value]) => (
-                                    <tr key={key}>
-                                        <td style={{ fontWeight: "bold" }}>{translations[key]}</td>
-                                        <td>{Array.isArray(value) && value.length ? value.join(", ") : "Trống"}</td>
-                                    </tr>
-                                ))}
+                                {Object.entries(data?.result || {}).map(([key, value]) => {
+                                    if (!key.trim()) return null;
+                                    return (
+                                        <tr key={key}>
+                                            <td style={{ textAlign: "left", fontWeight: "bold", backgroundColor: "#333", padding: "10px" }}>
+                                                {translations[key] || key}
+                                            </td>
+                                            <td style={{ textAlign: "left", padding: "10px" }}>
+                                                {Array.isArray(value) && value.length ? value.join(", ") : "Trống"}
+                                            </td>
+                                        </tr>
+                                    );
+                                })}
                             </tbody>
                         </table>
                     </div>

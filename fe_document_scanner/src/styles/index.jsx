@@ -22,9 +22,11 @@ export const HeaderConatiner = styled.div`
 `
 
 export const ImageContainer = styled.div`
-    width: 500px;
-    height: 300px;
+    width: 650px;
+    height: 400px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    border: 2px solid #1677ff; 
+    object-fit: cover;
 `;
