@@ -1,8 +1,8 @@
-import { Container } from './styles';
-import { Content } from './components/Content';
-import { Header } from './components/header';
-import { Spin } from 'antd';
-import { useLoading } from './store';
+import { Container } from './styles'
+import { Content } from './components/Content'
+import { Header } from './components/Header'
+import { Spin } from 'antd'
+import { useLoading } from './store'
 
 function App() {
   const { loading } = useLoading()
