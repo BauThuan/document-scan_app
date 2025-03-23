@@ -20,3 +20,11 @@ export const HeaderConatiner = styled.div`
     margin-bottom: 20px;
     cursor: pointer;
 `
+
+export const ImageContainer = styled.div`
+    width: 500px;
+    height: 300px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+`;

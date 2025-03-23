@@ -6,7 +6,8 @@ export const useLoading = create((set) => ({
 }));
 
 export const useShowUpload = create((set) => ({
-    isShow: false,
-    setIsShow: (status) => set({ isShow: status }),
-  }));
+  isShow: false,
+  setIsShow: (status) => set({ isShow: status }),
+}));
+
 
