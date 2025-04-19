@@ -10,4 +10,9 @@ export const useShowUpload = create((set) => ({
   setIsShow: (status) => set({ isShow: status }),
 }));
 
+export const useFile = create((set) => ({
+  file: null,
+  setFile: (data) => set({ file: data }),
+}));
+
 

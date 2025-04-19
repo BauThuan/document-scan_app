@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { InboxOutlined } from "@ant-design/icons";
 import { message, Upload, Button } from "antd";
 import { uploadImage } from "../services/services";
-import { useLoading, useShowUpload } from "../store";
+import { useLoading, useShowUpload, useFile } from "../store";
 import { ImageContainer } from "../styles";
 import { translations } from "../constant";
 
@@ -11,8 +11,8 @@ const { Dragger } = Upload;
 export const Content = () => {
     const { setLoading } = useLoading()
     const { isShow, setIsShow } = useShowUpload()
+    const { file, setFile } = useFile()
     const [data, setData] = useState({})
-    const [file, setFile] = useState(null)
 
     const props = {
         name: "file",
@@ -96,7 +96,7 @@ export const Content = () => {
                         type="primary"
                         onClick={handleUpload}
                         style={{ marginTop: 16, width: "100%" }}
-                        disabled={!file}
+                        disabled={!file && !isShow}
                     >
                         Upload image
                     </Button>
