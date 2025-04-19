@@ -4,7 +4,7 @@ export const translations = {
     des: "Chức vụ",
     email: "Email",
     name: "Họ tên",
-    ORG: "Cơ quan",
+    org: "Cơ quan",
     phone: "Số điện thoại",
     web: "Website"
 };
