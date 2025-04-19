@@ -38,6 +38,7 @@ export const Content = () => {
             message.success(`Upload thành công`)
             setLoading(false)
             setIsShow(true)
+            setFile(null)
         } catch (error) {
             message.error('Upload thất bại!')
             setLoading(false)
