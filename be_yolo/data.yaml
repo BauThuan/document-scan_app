@@ -1,0 +1,12 @@
+train: data_images/train
+val: data_images/test
+nc: 7
+names: [
+  'name',
+  'org',
+  'des',
+  'phone',
+  'address',
+  'email',
+  'web'
+]

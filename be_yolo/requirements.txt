@@ -1,0 +1,14 @@
+numpy
+pandas
+matplotlib
+opencv-python
+jupyter
+labelImg
+Pillow
+tqdm
+openpyxl
+scikit-learn
+vietocr
+torch
+torchvision
+flask-cors

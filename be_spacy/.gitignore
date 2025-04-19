@@ -1,0 +1,16 @@
+# Ignore Python environments
+venv/
+env/
+.docapp/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.dll
+*.lib
+
+# VS Code / PyCharm config
+.vscode/
+.idea/
