@@ -28,6 +28,7 @@ export const Content = () => {
         }
     }
 
+
     const handleUpload = async () => {
         try {
             setLoading(true)
@@ -45,6 +46,7 @@ export const Content = () => {
             setIsShow(false)
         }
     };
+    console.log(111111, data)
 
     return (
         <>
